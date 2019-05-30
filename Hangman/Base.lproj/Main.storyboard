@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,105 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CustomView" customModule="Hangman" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scz-oH-EtW">
+                                <rect key="frame" x="16" y="44" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="P4p-Jb-zLZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Play!"/>
+                                <connections>
+                                    <action selector="playAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCI-M6-bea"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - - - - - - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn1-Rl-JwA">
+                                <rect key="frame" x="16" y="112" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwD-Iy-E7a">
+                                <rect key="frame" x="16" y="168" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have 12 guesses remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWS-zg-1Fd">
+                                <rect key="frame" x="16" y="224" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You guessed correctly!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUE-Zb-J0w">
+                                <rect key="frame" x="16" y="253" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxP-Mx-6LG">
+                                <rect key="frame" x="16" y="282" width="343" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7mW-pi-XY3">
+                                <rect key="frame" x="16" y="750" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <connections>
+                                    <action selector="gameDifficultyChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7fM-eQ-Qvh"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7mW-pi-XY3" secondAttribute="trailing" constant="16" id="00K-IW-LmO"/>
+                            <constraint firstItem="Scz-oH-EtW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Xw-AX-brm"/>
+                            <constraint firstItem="qUE-Zb-J0w" firstAttribute="top" secondItem="WWS-zg-1Fd" secondAttribute="bottom" constant="8" id="4DW-8u-t1v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NwD-Iy-E7a" secondAttribute="trailing" constant="16" id="8l7-tP-V0I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WWS-zg-1Fd" secondAttribute="trailing" constant="16" id="AZ7-b2-hnm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wn1-Rl-JwA" secondAttribute="trailing" constant="16" id="AZX-F8-0Ym"/>
+                            <constraint firstItem="Scz-oH-EtW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fk5-3c-cdA"/>
+                            <constraint firstItem="wn1-Rl-JwA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H0D-us-zfW"/>
+                            <constraint firstItem="WWS-zg-1Fd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Hnr-hE-9Jp"/>
+                            <constraint firstItem="NxP-Mx-6LG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JSs-nk-5dx"/>
+                            <constraint firstItem="7mW-pi-XY3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MEy-qN-PGU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Scz-oH-EtW" secondAttribute="trailing" constant="16" id="O0Q-wM-2gd"/>
+                            <constraint firstItem="7mW-pi-XY3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qoo-1V-8wK"/>
+                            <constraint firstItem="NwD-Iy-E7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZzV-vo-mUM"/>
+                            <constraint firstItem="qUE-Zb-J0w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aPX-5Z-1VZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NxP-Mx-6LG" secondAttribute="trailing" constant="16" id="dA8-qF-B2k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qUE-Zb-J0w" secondAttribute="trailing" constant="16" id="hK6-TG-Jpx"/>
+                            <constraint firstItem="wn1-Rl-JwA" firstAttribute="top" secondItem="Scz-oH-EtW" secondAttribute="bottom" constant="8" id="kg3-L3-cFM"/>
+                            <constraint firstItem="NxP-Mx-6LG" firstAttribute="top" secondItem="qUE-Zb-J0w" secondAttribute="bottom" constant="8" id="p6u-kQ-AI7"/>
+                            <constraint firstItem="WWS-zg-1Fd" firstAttribute="top" secondItem="NwD-Iy-E7a" secondAttribute="bottom" constant="8" id="qPb-CN-VvR"/>
+                            <constraint firstItem="NwD-Iy-E7a" firstAttribute="top" secondItem="wn1-Rl-JwA" secondAttribute="bottom" constant="8" id="rQj-xk-QcF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="correctOrIncorrectGuessLabel" destination="qUE-Zb-J0w" id="CAt-VN-3Rf"/>
+                        <outlet property="gameDifficultySegmentedControl" destination="7mW-pi-XY3" id="XHJ-k3-LJg"/>
+                        <outlet property="letterGuessLabel" destination="NwD-Iy-E7a" id="Ldp-eW-Fk1"/>
+                        <outlet property="playAgainButton" destination="Scz-oH-EtW" id="I9g-UP-oqG"/>
+                        <outlet property="remainingGuessesLabel" destination="WWS-zg-1Fd" id="RsN-Go-nq5"/>
+                        <outlet property="secretWordDisplay" destination="wn1-Rl-JwA" id="SDA-Ae-wSc"/>
+                        <outlet property="winLoseLabel" destination="NxP-Mx-6LG" id="8Ar-2i-TCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="18.472906403940886"/>
         </scene>
     </scenes>
 </document>
