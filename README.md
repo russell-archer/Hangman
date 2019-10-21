@@ -18,3 +18,8 @@ Simple, non-graphical Hangman game.
 
 * The player loses if their available guesses reaches zero and underscores remain unfilled
 
+## Game UI
+![](./gameui.png)
+
+## Code Design
+![](./code-design.png)
